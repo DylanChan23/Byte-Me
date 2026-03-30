@@ -1,0 +1,7 @@
+{
+  "name": "@workspace/api",
+  "dependencies": {
+    "@workspace/auth": "workspace:*",
+    "better-auth": "^1.5.6"
+  }
+}
