@@ -14,7 +14,7 @@ import { Button } from "@workspace/ui/components/button"
 
 export default function Login() {
   return (
-    <div className="flex h-screen w-screen items-center justify-center">
+    <div className="flex h-full w-full items-center justify-center">
       <Card className="w-[350] text-center">
         <CardHeader>
           <CardTitle className="text-xl">Dashboard Access</CardTitle>
