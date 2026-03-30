@@ -35,7 +35,7 @@ export default function MySidebar() {
       await authClient.signOut({
         fetchOptions: {
           onSuccess: () => {
-            window.location.href = "/login"
+            window.location.href = "/"
           },
         },
       })

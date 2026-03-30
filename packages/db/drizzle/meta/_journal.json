@@ -8,6 +8,13 @@
       "when": 1774824960164,
       "tag": "0000_secret_king_cobra",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1774899181529,
+      "tag": "0001_light_valkyrie",
+      "breakpoints": true
     }
   ]
 }
