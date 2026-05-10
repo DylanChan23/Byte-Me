@@ -15,6 +15,20 @@
       "when": 1774899181529,
       "tag": "0001_light_valkyrie",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1778441776427,
+      "tag": "0002_living_ma_gnuci",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1778442181371,
+      "tag": "0003_lazy_roulette",
+      "breakpoints": true
     }
   ]
 }

@@ -1,6 +1,10 @@
 "use client"
 
-import { Avatar, AvatarImage } from "@workspace/ui/components/avatar"
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@workspace/ui/components/avatar"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -28,8 +32,14 @@ import MoonIcon from "@workspace/ui/icons/moon-icon"
 import { authClient } from "@workspace/auth/src/lib/auth-client"
 import Link from "next/link"
 import { useTheme } from "next-themes"
+import { getSession } from "@workspace/auth"
 
-export default function MySidebar() {
+type Session = Awaited<ReturnType<typeof getSession>>
+type MySidebarProps = {
+  session: Session
+}
+
+export default function MySidebar({ session }: MySidebarProps) {
   const handleSignOut = async () => {
     try {
       await authClient.signOut({
@@ -93,11 +103,19 @@ export default function MySidebar() {
                 <SidebarMenuButton size="lg" className="flex justify-between">
                   <div className="flex gap-2">
                     <Avatar className="h-fill">
-                      <AvatarImage />
+                      <AvatarImage src={session?.user.image ?? undefined} />
+                      <AvatarFallback>
+                        {session?.user.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
+                      </AvatarFallback>
                     </Avatar>
-                    <div>
-                      <p className="text-xs font-bold">Username</p>
-                      <p className="text-xs">email@email.com</p>
+                    <div className="flex flex-col">
+                      <span className="text-xs font-bold">
+                        {session?.user.name}
+                      </span>
+                      <span className="text-xs">{session?.user.email}</span>
                     </div>
                   </div>
                   <ChevronsUpDownIcon className="h-5! w-5!" />
@@ -109,15 +127,21 @@ export default function MySidebar() {
                 <DropdownMenuItem className="pointer-events-none">
                   <div className="flex gap-2">
                     <Avatar className="h-fill">
-                      <AvatarImage />
+                      <AvatarImage src={session?.user.image ?? undefined} />
+                      <AvatarFallback>
+                        {session?.user.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
+                      </AvatarFallback>
                     </Avatar>
-                    <div>
-                      <p className="text-xs font-bold text-muted-foreground">
-                        Username
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        email@email.com
-                      </p>
+                    <div className="flex flex-col">
+                      <span className="text-xs font-bold text-muted-foreground">
+                        {session?.user.name}
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        {session?.user.email}
+                      </span>
                     </div>
                   </div>
                 </DropdownMenuItem>
