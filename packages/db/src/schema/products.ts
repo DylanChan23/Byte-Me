@@ -1,12 +1,9 @@
 import { pgTable, text, timestamp, integer, boolean } from "drizzle-orm/pg-core"
-
-import { user, organization } from "./users"
+import { user } from "./users"
+import { relations } from "drizzle-orm"
 
 export const product = pgTable("product", {
   id: text("id").primaryKey(),
-  organizationId: text("organization_id")
-    .notNull()
-    .references(() => organization.id, { onDelete: "cascade" }),
   createdBy: text("created_by").references(() => user.id, {
     onDelete: "set null",
   }),
@@ -28,3 +25,14 @@ export const productImages = pgTable("product_images", {
   url: text("url").notNull(),
   isPrimary: boolean("is_primary").default(false).notNull(),
 })
+
+export const productRelations = relations(product, ({ many }) => ({
+  productImages: many(productImages),
+}))
+
+export const productImageRelations = relations(productImages, ({ one }) => ({
+  product: one(product, {
+    fields: [productImages.productId],
+    references: [product.id],
+  }),
+}))

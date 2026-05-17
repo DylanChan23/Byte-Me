@@ -9,6 +9,7 @@ import {
 } from "@workspace/ui/components/sidebar"
 import MySidebar from "@/components/my-sidebar"
 import { getSession } from "@workspace/auth"
+import { Toaster } from "sonner"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -41,6 +42,7 @@ export default async function RootLayout({
             {session && <MySidebar session={session} />}
             <SidebarTrigger className="mt-4 ml-4" />
             {children}
+            <Toaster position="top-center" closeButton />
           </SidebarProvider>
         </ThemeProvider>
       </body>
