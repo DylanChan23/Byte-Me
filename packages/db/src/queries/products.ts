@@ -1,9 +1,11 @@
 import { eq } from "drizzle-orm"
-import { db } from ".."
+import { getDB } from ".."
 import { product, productImages } from "../schema/products"
 import { uuid } from "../uuid"
 import { unlink } from "node:fs/promises"
 import path from "node:path"
+
+const db = getDB()
 
 // Create
 export async function createProduct(input: {

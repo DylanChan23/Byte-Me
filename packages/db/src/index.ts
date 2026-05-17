@@ -1,14 +1,23 @@
 import { drizzle } from "drizzle-orm/neon-http"
+import { neon } from "@neondatabase/serverless"
 import * as users from "./schema/users"
 import * as products from "./schema/products"
-import { neon } from "@neondatabase/serverless"
 
-const sql = neon(process.env.DATABASE_URL!)
+export function getDB() {
+  const url = process.env.DATABASE_URL
 
-export const db = drizzle(sql, {
-  schema: {
-    ...users,
-    ...products,
-  },
-})
+  if (!url) {
+    throw new Error("DATABASE_URL is missing")
+  }
+
+  const sql = neon(url)
+
+  return drizzle(sql, {
+    schema: {
+      ...users,
+      ...products,
+    },
+  })
+}
+
 export * from "./queries/products"

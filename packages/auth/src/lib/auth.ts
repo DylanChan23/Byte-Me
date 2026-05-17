@@ -1,7 +1,9 @@
 import { betterAuth } from "better-auth"
 import { drizzleAdapter } from "@better-auth/drizzle-adapter"
-import { db } from "@workspace/db"
+import { getDB } from "@workspace/db"
 import { headers } from "next/headers.js"
+
+const db = getDB()
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {

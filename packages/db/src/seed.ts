@@ -1,6 +1,8 @@
 import { eq } from "drizzle-orm"
-import { db } from "./index"
+import { getDB } from "./index"
 import { organization, user } from "./schema/users"
+
+const db = getDB()
 
 async function seed() {
   await db.insert(organization).values({
