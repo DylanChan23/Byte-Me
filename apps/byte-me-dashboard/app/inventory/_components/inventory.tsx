@@ -1,5 +1,4 @@
 "use client"
-
 import { useRouter } from "next/navigation"
 import AddProduct from "./add-product"
 import ProductCard from "./product-card"
