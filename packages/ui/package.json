@@ -41,7 +41,8 @@
     "@workspace/typescript-config": "workspace:*",
     "eslint": "^9.39.2",
     "tailwindcss": "^4.1.18",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "@workspace/auth": "workspace:*"
   },
   "exports": {
     "./globals.css": "./src/styles/globals.css",
@@ -49,6 +50,7 @@
     "./lib/*": "./src/lib/*.ts",
     "./components/*": "./src/components/*.tsx",
     "./hooks/*": "./src/hooks/*.ts",
-    "./icons/*": "./src/icons/*.tsx"
+    "./icons/*": "./src/icons/*.tsx",
+    "./myComponents/*": "./src/myComponents/*.tsx"
   }
 }
