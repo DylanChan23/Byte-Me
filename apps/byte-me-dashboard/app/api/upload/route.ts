@@ -23,7 +23,8 @@ export async function POST(req: Request) {
   const ext = mimeToExt[file.type] ?? "bin"
   const fileName = `${crypto.randomUUID()}.${ext}`
 
-  const filePath = path.join(process.cwd(), "public/uploads", fileName)
+  const uploadDir = path.resolve(process.cwd(), "../../uploads")
+  const filePath = path.join(uploadDir, fileName)
 
   await writeFile(filePath, buffer)
 

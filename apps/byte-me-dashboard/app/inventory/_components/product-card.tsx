@@ -44,7 +44,7 @@ export default function ProductCard({
   }
 
   return (
-    <Card className="transition-transform duration-300 ease-in-out hover:-translate-y-2">
+    <Card className="h-full transition-transform duration-300 ease-in-out hover:-translate-y-2">
       <Image
         src={src}
         alt={`${name} image`}
@@ -52,23 +52,29 @@ export default function ProductCard({
         height={600}
         className="w-full object-cover"
       />
-      <CardHeader>
-        <CardTitle className="text-lg font-bold uppercase">{name}</CardTitle>
-        <CardDescription>In Stock: {quantity}</CardDescription>
-        <CardAction>
-          <Badge variant="outline">${(price / 100).toFixed(2)}</Badge>
-        </CardAction>
-      </CardHeader>
-      <CardFooter className="flex w-full items-center gap-4">
-        <Button variant="secondary" className="flex-1">
-          Update
-          <PenIcon />
-        </Button>
-        <Button variant="destructive" onClick={handleDelete} className="flex-1">
-          Delete
-          <TrashIcon />
-        </Button>
-      </CardFooter>
+      <div className="flex h-full flex-col justify-between gap-4">
+        <CardHeader>
+          <CardTitle className="text-lg font-bold uppercase">{name}</CardTitle>
+          <CardDescription>In Stock: {quantity}</CardDescription>
+          <CardAction>
+            <Badge variant="outline">${(price / 100).toFixed(2)}</Badge>
+          </CardAction>
+        </CardHeader>
+        <CardFooter className="flex w-full gap-4">
+          <Button variant="secondary" className="flex-1">
+            Update
+            <PenIcon />
+          </Button>
+          <Button
+            variant="destructive"
+            onClick={handleDelete}
+            className="flex-1"
+          >
+            Delete
+            <TrashIcon />
+          </Button>
+        </CardFooter>
+      </div>
     </Card>
   )
 }

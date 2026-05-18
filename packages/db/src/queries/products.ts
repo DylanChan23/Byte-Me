@@ -73,7 +73,11 @@ export async function deleteProduct(id: string) {
   })
 
   for (const img of foundProduct?.productImages ?? []) {
-    const filePath = path.join(process.cwd(), "public", img.url)
+    const filePath = path.resolve(
+      process.cwd(),
+      "../../uploads",
+      path.basename(img.url)
+    )
     try {
       await unlink(filePath)
     } catch (err) {

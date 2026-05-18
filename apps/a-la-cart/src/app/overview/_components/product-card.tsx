@@ -1,0 +1,44 @@
+"use client"
+
+import { Button } from "@workspace/ui/components/button"
+import {
+  Card,
+  CardAction,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@workspace/ui/components/card"
+import { Badge } from "@workspace/ui/components/badge"
+import Image from "next/image"
+
+type ProductCardProps = {
+  name: string
+  price: number
+  src: string
+}
+
+export default function ProductCard({ name, price, src }: ProductCardProps) {
+  return (
+    <Card className="h-full transition-transform duration-300 ease-in-out hover:-translate-y-2">
+      <Image
+        src={src}
+        alt={`${name} image`}
+        width={600}
+        height={600}
+        className="w-full object-cover"
+      />
+      <div className="flex h-full flex-col justify-between gap-4">
+        <CardHeader>
+          <CardTitle className="text-lg font-bold uppercase">{name}</CardTitle>
+          <CardAction>
+            <Badge variant="outline">${(price / 100).toFixed(2)}</Badge>
+          </CardAction>
+        </CardHeader>
+        <CardFooter className="flex w-full">
+          <Button className="w-full">Add to cart</Button>
+        </CardFooter>
+      </div>
+    </Card>
+  )
+}

@@ -33,6 +33,7 @@ export async function createProductAction(input: {
       isPrimary: true,
     })
   }
+
   return created
 }
 
