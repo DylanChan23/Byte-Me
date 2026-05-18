@@ -38,12 +38,16 @@ export default async function RootLayout({
     >
       <body>
         <ThemeProvider>
-          <SidebarProvider>
-            {session && <MySidebar session={session} />}
-            <SidebarTrigger className="mt-4 ml-4" />
-            {children}
-            <Toaster position="top-center" closeButton />
-          </SidebarProvider>
+          {session ? (
+            <SidebarProvider>
+              <MySidebar session={session} />
+              <SidebarTrigger className="mt-4 ml-4" />
+              {children}
+            </SidebarProvider>
+          ) : (
+            <>{children}</>
+          )}
+          <Toaster position="top-center" closeButton />
         </ThemeProvider>
       </body>
     </html>

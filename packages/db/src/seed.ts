@@ -1,3 +1,5 @@
+import "dotenv/config"
+
 import { eq } from "drizzle-orm"
 import { getDB } from "./index"
 import { organization, user } from "./schema/users"
@@ -22,5 +24,4 @@ async function seed() {
     .where(eq(user.email, "chan0566@algonquinlive.com"))
   console.log("Manager Seed complete ✅")
 }
-
 seed()

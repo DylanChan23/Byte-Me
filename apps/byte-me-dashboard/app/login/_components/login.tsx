@@ -6,11 +6,9 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
-  CardFooter,
 } from "@workspace/ui/components/card"
 import { Separator } from "@workspace/ui/components/separator"
 import LoginButtons from "./loginButtons"
-import { Button } from "@workspace/ui/components/button"
 
 export default function Login() {
   return (
@@ -34,9 +32,6 @@ export default function Login() {
           </div>
           <LoginButtons />
         </CardContent>
-        <CardFooter>
-          <Button className="w-full">Create Account</Button>
-        </CardFooter>
       </Card>
     </div>
   )
