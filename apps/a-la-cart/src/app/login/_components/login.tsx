@@ -8,7 +8,7 @@ import {
   CardContent,
 } from "@workspace/ui/components/card"
 import { Separator } from "@workspace/ui/components/separator"
-import LoginButtons from "@workspace/auth/src/components/loginButtons"
+import { LoginButtons } from "@workspace/auth"
 
 export default function Login() {
   return (

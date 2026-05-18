@@ -1,4 +1,4 @@
-import { getSession } from "@workspace/auth/src/lib/auth"
+import { getSession } from "@workspace/auth"
 import { redirect } from "next/navigation"
 import Overview from "./_components/overview"
 
