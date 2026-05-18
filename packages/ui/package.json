@@ -41,8 +41,7 @@
     "@workspace/typescript-config": "workspace:*",
     "eslint": "^9.39.2",
     "tailwindcss": "^4.1.18",
-    "typescript": "^5.9.3",
-    "@workspace/auth": "workspace:*"
+    "typescript": "^5.9.3"
   },
   "exports": {
     "./globals.css": "./src/styles/globals.css",
