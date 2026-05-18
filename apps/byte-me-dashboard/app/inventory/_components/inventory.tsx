@@ -1,11 +1,25 @@
+"use client"
+
+import { useRouter } from "next/navigation"
 import AddProduct from "./add-product"
 import ProductCard from "./product-card"
+import { useEffect } from "react"
 
 type Props = {
   products: any[]
 }
 
 export default function Inventory({ products }: Props) {
+  const router = useRouter()
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      router.refresh()
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [router])
+
   return (
     <div className="mt-10 flex h-full w-full flex-col items-center pr-6">
       <h1 className="text-3xl font-bold">Inventory Page</h1>
