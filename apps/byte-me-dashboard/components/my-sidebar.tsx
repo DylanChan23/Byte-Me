@@ -29,10 +29,10 @@ import LogoutIcon from "@workspace/ui/icons/logout-icon"
 import GearIcon from "@workspace/ui/icons/gear-icon"
 import CartIcon from "@workspace/ui/icons/cart-icon"
 import MoonIcon from "@workspace/ui/icons/moon-icon"
-import { authClient } from "@workspace/auth"
+import { authClient } from "@workspace/auth/client"
 import Link from "next/link"
 import { useTheme } from "next-themes"
-import { getSession } from "@workspace/auth"
+import { getSession } from "@workspace/auth/server"
 
 type Session = Awaited<ReturnType<typeof getSession>>
 type MySidebarProps = {

@@ -1,7 +1,7 @@
 "use server"
 
 import { addProductImage, createProduct, deleteProduct } from "@workspace/db"
-import { getSession } from "@workspace/auth"
+import { getSession } from "@workspace/auth/server"
 
 // Create
 export async function createProductAction(input: {

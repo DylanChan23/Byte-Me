@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation"
 import Login from "./_components/login"
-import { getSession } from "@workspace/auth"
+import { getSession } from "@workspace/auth/server"
 
 export default async function Page() {
   const session = await getSession()

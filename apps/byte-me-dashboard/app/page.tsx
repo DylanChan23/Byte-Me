@@ -1,6 +1,6 @@
 import { Button } from "@workspace/ui/components/button"
 import Link from "next/link"
-import { getSession } from "@workspace/auth"
+import { getSession } from "@workspace/auth/server"
 import { redirect } from "next/navigation"
 
 export default async function Page() {

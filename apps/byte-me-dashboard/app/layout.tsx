@@ -8,7 +8,7 @@ import {
   SidebarTrigger,
 } from "@workspace/ui/components/sidebar"
 import MySidebar from "@/components/my-sidebar"
-import { getSession } from "@workspace/auth"
+import { getSession } from "@workspace/auth/server"
 import { Toaster } from "sonner"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
