@@ -1,4 +1,4 @@
-import { getSession } from "@workspace/auth"
+import { getSession } from "@workspace/auth/server"
 import { redirect } from "next/navigation"
 import Inventory from "./_components/inventory"
 import { getProductsWithImages } from "@workspace/db"
