@@ -3,7 +3,7 @@
 import { Button } from "@workspace/ui/components/button"
 import GithubIcon from "@workspace/ui/icons/github-icon"
 import GoogleIcon from "@workspace/ui/icons/google-icon"
-import { authClient } from "@workspace/auth/src/lib/auth-client"
+import { authClient } from "@workspace/auth"
 
 export default function LoginButtons() {
   const LoginWithGithub = async () =>
