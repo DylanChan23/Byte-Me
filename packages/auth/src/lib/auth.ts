@@ -7,6 +7,9 @@ import { admin } from "better-auth/plugins"
 const db = getDB()
 
 export const auth = betterAuth({
+  logger: {
+    level: "debug",
+  },
   secret: process.env.BETTER_AUTH_SECRET,
   baseURL: process.env.BETTER_AUTH_URL,
   plugins: [admin()],
