@@ -2,8 +2,7 @@ import { eq } from "drizzle-orm"
 import { getDB } from ".."
 import { product, productImages } from "../schema/products"
 import { uuid } from "../uuid"
-import { unlink } from "node:fs/promises"
-import path from "node:path"
+import { del } from "@vercel/blob"
 
 const db = getDB()
 
@@ -72,16 +71,13 @@ export async function deleteProduct(id: string) {
     },
   })
 
+  if (!foundProduct) return
+
   for (const img of foundProduct?.productImages ?? []) {
-    const filePath = path.resolve(
-      process.cwd(),
-      "../../uploads",
-      path.basename(img.url)
-    )
     try {
-      await unlink(filePath)
+      await del(img.url)
     } catch (err) {
-      console.error("Failed to delete file:", filePath, err)
+      console.error("Failed to delete blob:", img.url, err)
     }
   }
   await db.delete(product).where(eq(product.id, id))
