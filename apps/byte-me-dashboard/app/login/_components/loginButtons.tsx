@@ -20,10 +20,10 @@ export default function LoginButtons() {
 
   return (
     <div className="flex items-center justify-between gap-5">
-      <Button className="flex-1" variant={"outline"} onClick={LoginWithGithub}>
+      {/* <Button className="flex-1" variant={"outline"} onClick={LoginWithGithub}>
         <GithubIcon />
         Github
-      </Button>
+      </Button> */}
       <Button className="flex-1" variant={"outline"} onClick={LoginWithGoogle}>
         <GoogleIcon />
         Google
