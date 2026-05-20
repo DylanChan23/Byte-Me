@@ -9,6 +9,11 @@ export const user = pgTable("user", {
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 
+  // Login debug
+  banned: boolean("banned").default(false),
+  banReason: text("ban_reason"),
+  banExpires: timestamp("ban_expires"),
+
   // Account type
   organizationId: text("organization_id").references(() => organization.id, {
     onDelete: "cascade",
