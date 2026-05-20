@@ -20,7 +20,7 @@ export default function LoginButtons() {
 
   return (
     <div className="flex items-center justify-between gap-5">
-      <Button className="flex-1" variant={"outline"} onClick={}>
+      <Button className="flex-1" variant={"outline"} onClick={LoginWithGithub}>
         <GithubIcon />
         Github
       </Button>
