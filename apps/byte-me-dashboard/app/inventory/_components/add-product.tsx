@@ -147,24 +147,26 @@ export default function AddProduct() {
                 onBlur={() => setPrice(formatPrice(price))}
               />
             </Field>
-            {/* Quantity */}
-            <Field>
-              <FieldLabel>Quantity</FieldLabel>
-              <Input
-                placeholder="12"
-                value={quantity}
-                onChange={(e) => setQuantity(Number(e.target.value))}
-              />
-            </Field>
-            {/* Low Stock */}
-            <Field>
-              <FieldLabel>Low stock at</FieldLabel>
-              <Input
-                placeholder="4"
-                value={lowStockAt}
-                onChange={(e) => setLowStockAt(Number(e.target.value))}
-              />
-            </Field>
+            <div className="flex gap-8">
+              {/* Quantity */}
+              <Field>
+                <FieldLabel>Quantity</FieldLabel>
+                <Input
+                  placeholder="12"
+                  value={quantity}
+                  onChange={(e) => setQuantity(Number(e.target.value))}
+                />
+              </Field>
+              {/* Low Stock */}
+              <Field>
+                <FieldLabel>Low stock at</FieldLabel>
+                <Input
+                  placeholder="4"
+                  value={lowStockAt}
+                  onChange={(e) => setLowStockAt(Number(e.target.value))}
+                />
+              </Field>
+            </div>
             {/* Images */}
             <Field>
               <FieldLabel>Images</FieldLabel>

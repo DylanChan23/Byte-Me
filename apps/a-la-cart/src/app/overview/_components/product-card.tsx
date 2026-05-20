@@ -20,13 +20,13 @@ type ProductCardProps = {
 
 export default function ProductCard({ name, price, src }: ProductCardProps) {
   return (
-    <Card className="h-full transition-transform duration-300 ease-in-out hover:-translate-y-2">
+    <Card className="h-fit w-3xs transition-transform duration-300 ease-in-out hover:-translate-y-2">
       <Image
         src={src}
         alt={`${name} image`}
         width={600}
         height={600}
-        className="w-full object-cover"
+        className="aspect-square w-full object-cover"
       />
       <div className="flex h-full flex-col justify-between gap-4">
         <CardHeader>
