@@ -8,7 +8,7 @@ import { authClient } from "@workspace/auth/client"
 export default function LoginButtons() {
   const LoginWithGithub = async () =>
     await authClient.signIn.social({
-      callbackURL: "https:/a-la-cart.dylanchan.dev//overview",
+      callbackURL: "https://a-la-cart.dylanchan.dev/overview",
       provider: "github",
     })
 
